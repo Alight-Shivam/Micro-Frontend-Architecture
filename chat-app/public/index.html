@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat Micro-Frontend Application with real-time messaging">
+    <meta name="theme-color" content="#667eea">
+    <title>Chat Micro-Frontend</title>
+    <style>
+        /* Critical CSS for loading state */
+        .initial-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex-direction: column;
+        }
+        
+        .initial-loading h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        
+        .initial-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <!-- Initial loading state while JavaScript loads -->
+        <div class="initial-loading">
+            <h1>💬 Chat Application</h1>
+            <div class="initial-spinner"></div>
+            <div class="loading-text">Connecting to chat server...</div>
+        </div>
+    </div>
+    
+    <script>
+        // Console welcome message
+        console.log('%c💬 Chat Micro-Frontend App', 'color: #667eea; font-size: 24px; font-weight: bold;');
+        console.log('%cRunning on: http://localhost:3001', 'color: #51cf66; font-size: 14px;');
+        console.log('%cModule Federation: Remote Entry Available ✅', 'color: #667eea; font-size: 14px;');
+        
+        // Check if running standalone or embedded
+        window.addEventListener('load', function() {
+            const isStandalone = window.self === window.top;
+            if (isStandalone) {
+                console.log('%c🗨️ Chat App: Running in STANDALONE mode', 'color: #ff9500; font-size: 14px;');
+            } else {
+                console.log('%c🗨️ Chat App: Running EMBEDDED in host app', 'color: #51cf66; font-size: 14px;');
+            }
+        });
+    </script>
+</body>
+</html>

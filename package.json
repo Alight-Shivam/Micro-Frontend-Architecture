@@ -1,0 +1,25 @@
+{
+  "name": "micro-frontend-complete",
+  "version": "1.0.0",
+  "description": "Complete Micro-Frontend Architecture with Module Federation",
+  "private": true,
+  "scripts": {
+    "start:host": "cd host-app && npm start",
+    "start:chat": "cd chat-app && npm start", 
+    "start:email": "cd email-app && npm start",
+    "start:all": "concurrently \"npm run start:host\" \"npm run start:chat\" \"npm run start:email\"",
+    "install:all": "npm install && cd host-app && npm install && cd ../chat-app && npm install && cd ../email-app && npm install",
+    "build:host": "cd host-app && npm run build",
+    "build:chat": "cd chat-app && npm run build",
+    "build:email": "cd email-app && npm run build",
+    "build:all": "npm run build:host && npm run build:chat && npm run build:email"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "workspaces": [
+    "host-app",
+    "chat-app", 
+    "email-app"
+  ]
+}

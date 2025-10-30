@@ -1,0 +1,167 @@
+/* Email App Specific Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling for Email List */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+/* Email Item Animation */
+.email-item-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.email-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease-out;
+}
+
+.email-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.email-item-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease-in;
+}
+
+/* Modal Animation */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+}
+
+.modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in;
+}
+
+/* Focus Styles for Accessibility */
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+/* Status Badge Colors */
+.status-unread {
+  background: #ff6b6b;
+}
+
+.status-important {
+  background: #ff9500;
+}
+
+.status-work {
+  background: #667eea;
+}
+
+.status-personal {
+  background: #51cf66;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .email-card {
+    height: 100vh;
+    border-radius: 0;
+  }
+  
+  .sidebar {
+    width: 200px;
+  }
+  
+  .compose-form {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  
+  .email-item {
+    padding: 12px 16px;
+  }
+}
+
+/* Loading States */
+.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Utility Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Email Priority Indicators */
+.priority-high {
+  border-left: 4px solid #ff6b6b;
+}
+
+.priority-normal {
+  border-left: 4px solid transparent;
+}
+
+.priority-low {
+  border-left: 4px solid #adb5bd;
+}
+
+/* Attachment Indicator */
+.has-attachment::before {
+  content: '📎';
+  margin-right: 8px;
+}
