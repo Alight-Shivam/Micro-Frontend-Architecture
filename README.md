@@ -4,7 +4,7 @@ A complete **React Micro-Frontend** setup using **Module Federation** with the b
 
 ## ✅ 100% UI/Frontend Only
 
-**No backend needed!** This is a pure frontend architecture demonstration:
+**No backend !** This is a pure frontend architecture demonstration:
 - ✅ **No APIs** - All data is simulated/mocked
 - ✅ **No databases** - Demo data is hardcoded  
 - ✅ **No servers** - Just webpack dev servers
